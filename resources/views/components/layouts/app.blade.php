@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased font-sans">
+    <h1>Currently in the app blade which has the consistent layout.</h1>
     
     <main>
         <!-- Livewire components will inject here -->

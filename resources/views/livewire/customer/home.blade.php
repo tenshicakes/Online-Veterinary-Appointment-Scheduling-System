@@ -1,0 +1,1 @@
+<h1>This is the home page which is the default component for customers.</h1>
