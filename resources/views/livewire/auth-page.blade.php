@@ -1,10 +1,16 @@
 <div>
     <!-- flex-col-reverse stacks the image on top for mobile, lg:flex-row splits them side-by-side on desktop -->
-    <div x-data="{ isLogin: true }" class="min-h-screen flex flex-col-reverse lg:flex-row bg-brand-background font-sans text-gray-900">
+    <div x-data="{ isLogin: true }" class="min-h-screen flex flex-col-reverse lg:flex-row bg-white font-sans text-gray-900">
 
         <!-- FORM AREA (Bottom on mobile, Left on desktop) -->
         <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 lg:py-0">
-            <div class="max-w-md w-full mx-auto">
+                <div class="max-w-md w-full mx-auto">
+                    <div class="flex items-center space-x-3 mb-1">
+                        <!-- PNG Logo (Scales smoothly: 10 (40px) on mobile, 12 (48px) on desktop) -->
+                        <img src="{{ asset('images/clinic-logo.png') }}" 
+                         alt="Doc Jay's Logo" 
+                        class="w-40 h-40 lg:w-300 lg:h-70 object-contain shrink-0"> 
+                    </div>
                 
                 <h1 class="text-4xl font-extrabold text-gray-900 mb-2" x-text="isLogin ? 'Welcome' : 'Create an Account'"></h1>
                 <p class="text-gray-500 mb-10" x-text="isLogin ? 'Log in your account  to start an appointment.' : 'Sign up to start booking with Doc Jay\'s.'"></p>
@@ -75,8 +81,10 @@
             <div x-data="{
                     activeSlide: 0,
                     slides: [
-                        '{{ asset('images/Clinic-pic.jpg') }}',
-                        '{{ asset('images/Clinic-pic2.jpg') }}',
+                        '{{ asset('images/picture1.jpg') }}',
+                        '{{ asset('images/picture2.jpg') }}',
+                        '{{ asset('images/picture3.jpg') }}',
+                        '{{ asset('images/picture4.jpg') }}',
                     ],
                     next() { this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1 },
                     prev() { this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1 },
