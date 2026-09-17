@@ -8,5 +8,6 @@
         <p>LET IT GREEN LET IT GREEN!</p>
         <h1 class="text-4xl font-bold text-blue-600">Doc Jay's Vet Clinic</h1>
         <label for="pet_image" class="block text-sm font-medium text-gray-700">Pet Image</label>
+        <P>LARPING SO HARD</P>
     </div>
 </x-layouts.app>
