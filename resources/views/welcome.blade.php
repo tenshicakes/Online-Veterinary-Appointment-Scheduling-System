@@ -7,6 +7,6 @@
         <p class="text-gray-600 mt-2">Wow its working...great</p>
         <p>LET IT GREEN LET IT GREEN!</p>
         <h1 class="text-4xl font-bold text-blue-600">Doc Jay's Vet Clinic</h1>
-        
+        <label for="pet_image" class="block text-sm font-medium text-gray-700">Pet Image</label>
     </div>
 </x-layouts.app>
