@@ -2,18 +2,20 @@
 
 namespace App\Livewire;
 
-use Livewire\Attributes\Layout;
-use Livewire\Component;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use Livewire\Attributes\Layout;
+use Livewire\Component;
 
-#[Layout('components.layouts.app')]
+#[Layout('components.layouts.guest')]
 class AuthPage extends Component
 {
     // Form Input Properties
     public $name = '';
+
     public $email = '';
+
     public $password = '';
 
     public function login()
@@ -25,6 +27,7 @@ class AuthPage extends Component
 
         if (Auth::attempt($credentials)) {
             session()->regenerate();
+
             return redirect()->intended('/home');
         }
 
@@ -47,6 +50,7 @@ class AuthPage extends Component
         ]);
 
         Auth::login($user);
+
         return redirect()->route('home');
     }
 
