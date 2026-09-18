@@ -39,7 +39,7 @@ class AuthPage extends Component
         $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:8',
         ]);
 
         $user = User::create([
@@ -52,6 +52,12 @@ class AuthPage extends Component
         Auth::login($user);
 
         return redirect()->route('home');
+    }
+
+    public function resetForm()
+    {
+        $this->reset(['name', 'email', 'password']);
+        $this->resetValidation();
     }
 
     public function render()
