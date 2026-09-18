@@ -40,7 +40,7 @@
                     
                     <p class="text-center text-sm text-gray-600 mt-6">
                         Don't have an account? 
-                        <button type="button" @click="isLogin = false" class="text-brand-blue font-bold hover:underline">Sign up</button>
+                        <button type="button" @click="isLogin = false; $wire.resetForm()" class="text-brand-blue font-bold hover:underline">Sign up</button>
                     </p>
                 </form>
 
@@ -68,7 +68,7 @@
                     
                     <p class="text-center text-sm text-gray-600 mt-6">
                         Already have an account? 
-                        <button type="button" @click="isLogin = true" class="text-brand-blue font-bold hover:underline">Log in</button>
+                        <button type="button" @click="isLogin = true; $wire.resetForm()" class="text-brand-blue font-bold hover:underline">Log in</button>
                     </p>
                 </form>
             </div>

@@ -1,14 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Middleware\PreventBackHistory;
 use App\Livewire\AuthPage;
+use App\Livewire\Customer\Appointment;
 use App\Livewire\Customer\Home;
 use App\Livewire\Customer\Profile;
-use App\Livewire\Customer\Appointment;
-use App\Http\Middleware\PreventBackHistory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', AuthPage::class)->name('auth');
+Route::get('/', AuthPage::class)->name('login');
 
 Route::middleware(['auth', PreventBackHistory::class])->group(function () {
     Route::get('/home', Home::class)->name('home');
@@ -19,7 +19,7 @@ Route::middleware(['auth', PreventBackHistory::class])->group(function () {
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
-        
+
         return redirect('/');
     })->name('logout');
 
