@@ -85,6 +85,11 @@
                         '{{ asset('images/picture2.jpg') }}',
                         '{{ asset('images/picture3.jpg') }}',
                         '{{ asset('images/picture4.jpg') }}',
+                        '{{ asset('images/picture5.jpg') }}',
+                        '{{ asset('images/picture6.jpg') }}',
+                        '{{ asset('images/picture7.jpg') }}',
+
+
                     ],
                     next() { this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1 },
                     prev() { this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1 },
